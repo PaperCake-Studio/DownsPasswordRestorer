@@ -1,0 +1,308 @@
+:root {
+    --general-margin: 10px;
+    --topbar-blurness: 10px;
+}
+
+body {
+    overflow: hidden;
+	background: linear-gradient(-45deg, #ee7752, #e779a3, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+    margin: 0;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+}
+
+.footer p {
+    margin: 10px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.topbar h1 {
+    margin: 20px;
+    font-size: 40px;
+    background-image: linear-gradient(to right, #0250c5 0%, #d43f8d 100%);
+    background-clip: text;
+    color: transparent;
+}
+
+
+.topbar img {
+    height: 80px;
+    margin: 10px;
+    animation: iconRotation 10s linear infinite;
+}
+
+@keyframes iconRotation {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
+
+.topbar {
+    /* From https://css.glass */
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(var(--topbar-blurness));
+    -webkit-backdrop-filter: blur(var(--topbar-blurness));
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 100px;
+    margin: 0;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+* {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+  Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+  Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+#passwd-found {
+    font-size: 30px;
+    margin: 5px 0 10px 0;
+    color: limegreen;
+    font-weight: bold;
+    text-shadow: black 1px 1px 0;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#username {
+    width: 500px;
+}
+
+
+progress {
+    margin: var(--general-margin);
+    border-radius: 7px; 
+    width: 600px;
+    height: 15px;
+    box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 );
+    background-color: white;
+  }
+
+select {
+    margin-bottom: var(--general-margin);
+    appearance: none;
+    border: none;
+    border-radius: 20px;
+    width: 525px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+    background-color: white;
+}
+
+select:focus {
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+               -13px -13px 100px #ffffff;
+}
+
+select:disabled {
+    background-color: #bbb !important;
+}
+
+svg {
+    height: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+/* region input */
+input {
+    margin-bottom: var(--general-margin);
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #fff;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+}
+  
+input:focus {
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+               -13px -13px 100px #ffffff;
+}
+
+input:disabled {
+    background-color: #bbb !important;
+}
+/* endregion */
+
+/* region button */
+button,
+button *,
+button :after,
+button :before,
+button:after,
+button:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+button {
+    margin: var(--general-margin);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+button:disabled {
+  cursor: default;
+  background: #000 !important;
+}
+button:-moz-focusing {
+  outline: auto;
+}
+button svg {
+  display: block;
+  vertical-align: middle;
+}
+button [hidden] {
+  display: none;
+}
+button {
+  background: linear-gradient(90deg, blue, red);
+  border-radius: 999px;
+  box-sizing: border-box;
+  color: #000;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  padding: 1.8rem 5rem;
+  position: relative;
+  text-transform: uppercase;
+}
+button span {
+  background: #1e293b;
+  border-radius: 999px;
+  color: #fff;
+  display: grid;
+  inset: 5px;
+  place-items: center;
+  position: absolute;
+  transition: background 0.3s;
+}
+button:hover span {
+  background: none;
+}
+/* endregion */
+
+
+ /* Customize the label (the container) */
+ .container {
+    margin: 5px;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 5px;
+    border: solid #bbb;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  } 
