@@ -31,7 +31,7 @@
             <span style="font-size: 20px; color: white;">API</span>
         </div>
 
-        <select id="api">
+        <select id="api" onchange="dropdownOnChange(this.selectedIndex)">
             <option>m.afficienta.cn - authSupervisedSession</option>
             <option>schools.afficienta.cn</option>
         </select>
@@ -48,7 +48,12 @@
         
         <progress id="progress" value="0" max="10000">0%</progress>
         <p id="passwd-found">找到的密码</p>
-        <button id="startBtn"><span>启动</span></button>
+
+        <div style="display: flex; flex-direction: row;">
+            <button id="usernameBtn" style="margin: var(--general-margin);" disabled><span>忘记了用户名？</span></button>
+            <button id="startBtn" style="margin: var(--general-margin);"><span>启动</span></button>
+        </div>
+        
     </div>
     <div class="footer">
         <p id="testing-passwd">正在测试的密码</p>
